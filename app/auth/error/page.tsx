@@ -1,14 +1,16 @@
-export default function AuthErrorPage({
-  searchParams,
-}: {
-  searchParams: { error?: string };
-}) {
-  console.log(searchParams);
+interface ErrorPageProps {
+  searchParams?: {
+    error?: string;
+  };
+}
+
+export default function ErrorPage({ searchParams }: ErrorPageProps) {
+  const error = searchParams?.error || "Unknown error";
+
   return (
-    <div>
-      <h1>Authentication Error</h1>
-      <p>{searchParams?.error ?? "Unknown error occurred"}</p>
-      <p>{JSON.stringify(searchParams)}</p>
+    <div className="flex flex-col items-center justify-center h-screen">
+      <h1 className="text-2xl font-bold">Authentication Error</h1>
+      <p className="text-red-500 mt-4">{error}</p>
     </div>
   );
 }
