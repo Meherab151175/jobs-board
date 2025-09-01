@@ -3,10 +3,12 @@ import { stripe } from "@/app/utils/stripe";
 import { headers } from "next/headers";
 import Stripe from "stripe";
 
+export const dynamic = "force-dynamic";
+
 export async function POST(req: Request) {
   const body = await req.text();
 
-  const headersList = await headers();
+  const headersList = headers();
 
   const signature = headersList.get("Stripe-Signature") as string;
 
