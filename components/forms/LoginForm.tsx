@@ -1,5 +1,5 @@
 // import { signInWithGitHub, signInWithGoogle } from "@/app/actions";
-import MyForm from "@/app/login/__login_component";
+import MyForm from "@/components/forms/Login_Component";
 import { signIn } from "@/auth";
 import {
   Card,

@@ -1,10 +1,5 @@
-interface ErrorPageProps {
-  searchParams?: {
-    error?: string;
-  };
-}
-
-export default function ErrorPage({ searchParams }: ErrorPageProps) {
+export default function ErrorPage(props: any) {
+  const searchParams = props.searchParams as { error?: string };
   const error = searchParams?.error || "Unknown error";
 
   return (
